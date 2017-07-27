@@ -21,6 +21,7 @@
   "homepage": "https://github.com/joshterrill/usda-ingredients-api#readme",
   "dependencies": {
     "body-parser": "^1.14.1",
+    "cheerio": "^1.0.0-rc.2",
     "dotenv": "^4.0.0",
     "express": "^4.13.3",
     "morgan": "^1.6.1",

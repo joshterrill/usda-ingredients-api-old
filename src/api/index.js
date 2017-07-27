@@ -13,5 +13,10 @@ module.exports = () => {
     res.json({url: process.env.USDA_URL});
   });
 
+  api.get('/api/query', (req, res) => {
+    const upc = req.query.upc;
+    res.json({upc});
+  });
+
   return api;
 }

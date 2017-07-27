@@ -1,0 +1,31 @@
+{
+  "name": "simple-express-server",
+  "private": true,
+  "version": "1.0.1",
+  "description": "simple express server with JSON api built with es6 syntax",
+  "main": "dist",
+  "scripts": {
+    "dev": "nodemon src",
+    "start": "node src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshterrill/simple-express-server.git"
+  },
+  "keywords": [
+  ],
+  "author": "Josh Terrill",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joshterrill/simple-express-server/issues"
+  },
+  "homepage": "https://github.com/joshterrill/simple-express-server#readme",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3",
+    "morgan": "^1.6.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.9.2"
+  }
+}

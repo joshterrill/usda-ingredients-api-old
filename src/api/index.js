@@ -22,7 +22,11 @@ module.exports = () => {
       let $ = cheerio.load(body.replace(/[\n\r\t]+/g, ''));
       const link = $($($($('.list-left table tr')[1])).children().slice(2).html()).attr('href').replace(/[\n\r\t]+/g, '');
       const text = $($($($('.list-left table tr')[1])).children().slice(2).html()).text().replace(/[\n\r\t]+/g, '');
-      res.json({link, text})
+      request.get(`${process.env.USDA_URL}${link}`, (lErr, lRes, lBody) => {
+        $ = cheerio.load(lBody.replace(/[\n\r\t]+/g, ''));      
+        const ingredients = $('.container .row .col-md-12').slice(5).html().replace(/[\n\r\t]+/g, '').replace('<strong>Ingredients: </strong>', '').split('<span')[0].trim();
+        res.json({link, text, ingredients});
+      });
     });
   });
 

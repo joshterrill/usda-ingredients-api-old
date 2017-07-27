@@ -1,8 +1,8 @@
 {
-  "name": "simple-express-server",
+  "name": "usda-ingredients-api",
   "private": true,
-  "version": "1.0.1",
-  "description": "simple express server with JSON api built with es6 syntax",
+  "version": "1.0.0",
+  "description": "an express API server for the USDA food composition database that returns a list of ingredients given a UPC code",
   "main": "dist",
   "scripts": {
     "dev": "nodemon src",
@@ -10,18 +10,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/joshterrill/simple-express-server.git"
+    "url": "git+https://github.com/joshterrill/usda-ingredients-api.git"
   },
-  "keywords": [
-  ],
+  "keywords": [],
   "author": "Josh Terrill",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/joshterrill/simple-express-server/issues"
+    "url": "https://github.com/joshterrill/usda-ingredients-api/issues"
   },
-  "homepage": "https://github.com/joshterrill/simple-express-server#readme",
+  "homepage": "https://github.com/joshterrill/usda-ingredients-api#readme",
   "dependencies": {
     "body-parser": "^1.14.1",
+    "dotenv": "^4.0.0",
     "express": "^4.13.3",
     "morgan": "^1.6.1"
   },

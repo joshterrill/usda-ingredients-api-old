@@ -24,8 +24,12 @@ module.exports = () => {
       const text = $($($($('.list-left table tr')[1])).children().slice(2).html()).text().replace(/[\n\r\t]+/g, '');
       request.get(`${process.env.USDA_URL}${link}`, (lErr, lRes, lBody) => {
         $ = cheerio.load(lBody.replace(/[\n\r\t]+/g, ''));      
-        const ingredients = $('.container .row .col-md-12').slice(5).html().replace(/[\n\r\t]+/g, '').replace('<strong>Ingredients: </strong>', '').split('<span')[0].trim();
-        res.json({link, text, ingredients});
+        let ingredients = $('.container .row .col-md-12').slice(5).html().replace(/[\n\r\t]+/g, '').replace('<strong>Ingredients: </strong>', '').split('<span')[0].trim();
+        if (ingredients.endsWith('.')) {
+          ingredients = ingredients.slice(0, -1);
+        }
+        const ingredientsArray = ingredients.split(', ');
+        res.json({link, text, ingredients, ingredientsArray});
       });
     });
   });
